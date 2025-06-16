@@ -3,9 +3,14 @@ package view;
 import dto.SaleDTO;
 import model.SaleObserver;
 
+/**
+ * Abstract class using the Template Method Pattern
+ * to handle revenue updates and display.
+ */
 public abstract class RevenueDisplay implements SaleObserver {
     private float totalRevenue = 0;
 
+    @Override
     public void newSale(SaleDTO saleDTO) {
         totalRevenue += saleDTO.getTotalPrice();
         showTotalRevenue();
@@ -13,16 +18,22 @@ public abstract class RevenueDisplay implements SaleObserver {
 
     private void showTotalRevenue() {
         try {
-            doShowTotalRevenue();
+            doShowTotalRevenue(totalRevenue);
         } catch (Exception e) {
             handleErrors(e);
         }
     }
 
-    protected float getTotalRevenue() {
-        return totalRevenue;
-    }
+    /**
+     * Subclasses implement how to show total revenue.
+     * @param totalRevenue The revenue to show.
+     * @throws Exception If something goes wrong.
+     */
+    protected abstract void doShowTotalRevenue(float totalRevenue) throws Exception;
 
-    protected abstract void doShowTotalRevenue() throws Exception;
+    /**
+     * Subclasses implement how to handle display errors.
+     * @param e The exception.
+     */
     protected abstract void handleErrors(Exception e);
 }

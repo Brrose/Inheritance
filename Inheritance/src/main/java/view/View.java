@@ -29,7 +29,7 @@ public class View {
         this.controller = controller;
         this.logHandler = logHandler;
         try {
-         controller.addSaleObserver(new ConsoleRevenueDisplay());
+         controller.addSaleObserver(new TotalRevenueView());
          controller.addSaleObserver(new TotalRevenueFileOutput());
         }
         catch (IOException ioe) {
