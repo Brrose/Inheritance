@@ -22,7 +22,6 @@ public class ConsoleRevenueDisplay extends RevenueDisplay {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    @Override
     protected void doShowTotalIncome() throws Exception {
         throw new UnsupportedOperationException("Not supported yet.");
     }

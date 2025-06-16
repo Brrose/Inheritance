@@ -3,7 +3,7 @@ package view;
 import dto.SaleDTO;
 import model.SaleObserver;
 
-public abstract class RevenueDisplay extends SaleObserver {
+public abstract class RevenueDisplay implements SaleObserver {
     private float totalRevenue = 0;
 
     public void newSale(SaleDTO saleDTO) {

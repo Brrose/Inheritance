@@ -114,6 +114,9 @@ public class Controller {
      * Ends the current sale and notifies all the observers.
      */
     public void endSale() {
-        sale.endSale();
+        SaleDTO saleDTO = this.sale.generateDTO();
+        for (SaleObserver obs : sale.getObservers()) {
+            obs.newSale(saleDTO);
+        }
     }
 }

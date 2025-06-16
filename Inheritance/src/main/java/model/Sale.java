@@ -214,14 +214,4 @@ public class Sale {
     public List<SaleObserver> getObservers() {
         return observers;
     }
-    
-     /**
-     * Ends the current sale and notifies all observers with the sale total price as int.
-     */
-    public void endSale() {
-        int priceToNotify = (int) totalPrice;
-        for (SaleObserver obs : observers) {
-            obs.newSale(priceToNotify);
-        }
-}
 }

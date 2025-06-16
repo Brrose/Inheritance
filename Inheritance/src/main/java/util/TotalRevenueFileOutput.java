@@ -31,7 +31,6 @@ public class TotalRevenueFileOutput extends RevenueDisplay {
         e.printStackTrace(); // Optional for debugging
     }
 
-    @Override
     protected void doShowTotalIncome() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
